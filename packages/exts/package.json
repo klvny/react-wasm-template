@@ -1,0 +1,26 @@
+{
+  "name": "@rw/exts",
+  "version": "1.0.0",
+  "main": "build/optimized.js",
+  "license": "MIT",
+  "files": [
+    "build/optimized.wasm",
+    "build/optimized.js",
+    "build/optimized.d.ts"
+  ],
+  "types": "build/optimized.d.ts",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.19.23"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.19.23",
+    "onchange": "^7.1.0"
+  },
+  "scripts": {
+    "asbuild:untouched": "asc assembly/index.ts --target debug",
+    "asbuild:optimized": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "asbuild:watch": "onchange -i 'assembly/**/*.ts' -- npm run asbuild:optimized",
+    "test": "node tests"
+  }
+}

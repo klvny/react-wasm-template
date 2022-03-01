@@ -1,0 +1,6 @@
+*.wasm
+*.wasm.map
+*.asm.js
+*.js
+*.d.ts
+*.wat

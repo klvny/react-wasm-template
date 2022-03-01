@@ -1,0 +1,14 @@
+{
+  "name": "react-wasm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:exts": "npx lerna run --scope exts asbuild:optimized",
+    "build:web": "npx lerna run --scope web build",
+    "list": "npx lerna list"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
